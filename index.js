@@ -61,11 +61,11 @@ client.on('interactionCreate', async interaction => {
             .setPlaceholder('Enter the price')
             .setStyle(TextInputStyle.Short);
 
-        const WoodQuantityInput = new TextInputBuilder()
+        /*const WoodQuantityInput = new TextInputBuilder()
             .setCustomId('wts-wood-quantity-input')
             .setLabel('For Wood')
             .setPlaceholder('Enter the quantity')
-            .setStyle(TextInputStyle.Short);
+            .setStyle(TextInputStyle.Short);*/
 
         const StonePriceInput = new TextInputBuilder()
             .setCustomId('wts-stone-price-input')
@@ -73,11 +73,11 @@ client.on('interactionCreate', async interaction => {
             .setPlaceholder('Enter the price')
             .setStyle(TextInputStyle.Short);
 
-        const StoneQuantityInput = new TextInputBuilder()
+        /*const StoneQuantityInput = new TextInputBuilder()
             .setCustomId('wts-stone-quantity-input')
             .setLabel('For Stone?')
             .setPlaceholder('Enter the quantity')
-            .setStyle(TextInputStyle.Short);
+            .setStyle(TextInputStyle.Short);*/
 
         const IronPriceInput = new TextInputBuilder()
             .setCustomId('wts-iron-price-input')
@@ -85,11 +85,11 @@ client.on('interactionCreate', async interaction => {
             .setPlaceholder('Enter the price')
             .setStyle(TextInputStyle.Short);
 
-        const IronQuantityInput = new TextInputBuilder()
+        /*const IronQuantityInput = new TextInputBuilder()
             .setCustomId('wts-iron-quantity-input')
             .setLabel('For Iron?')
             .setPlaceholder('Enter the quantity')
-            .setStyle(TextInputStyle.Short);
+            .setStyle(TextInputStyle.Short);*/
 
         const GoldPriceInput = new TextInputBuilder()
             .setCustomId('wts-gold-price-input')
@@ -97,28 +97,28 @@ client.on('interactionCreate', async interaction => {
             .setPlaceholder('Enter the price')
             .setStyle(TextInputStyle.Short);
 
-        const GoldQuantityInput = new TextInputBuilder()
+        /*const GoldQuantityInput = new TextInputBuilder()
             .setCustomId('wts-gold-quantity-input')
             .setLabel('For Gold?')
             .setPlaceholder('Enter the quantity')
-            .setStyle(TextInputStyle.Short);
+            .setStyle(TextInputStyle.Short);*/
 
         // Add the text inputs to the modal
         const WoodPriceInputAction = new ActionRowBuilder().addComponents(WoodPriceInput);
-        const WoodQuantityInputAction = new ActionRowBuilder().addComponents(WoodQuantityInput);
+        //const WoodQuantityInputAction = new ActionRowBuilder().addComponents(WoodQuantityInput);
         const StonePriceInputAction = new ActionRowBuilder().addComponents(StonePriceInput);
-        const StoneQuantityInputAction = new ActionRowBuilder().addComponents(StoneQuantityInput);
+        //const StoneQuantityInputAction = new ActionRowBuilder().addComponents(StoneQuantityInput);
         const IronPriceInputAction = new ActionRowBuilder().addComponents(IronPriceInput);
-        const IronQuantityInputAction = new ActionRowBuilder().addComponents(IronQuantityInput);
+        //const IronQuantityInputAction = new ActionRowBuilder().addComponents(IronQuantityInput);
         const GoldPriceInputAction = new ActionRowBuilder().addComponents(GoldPriceInput);
-        const GoldQuantityInputAction = new ActionRowBuilder().addComponents(GoldQuantityInput);
+        //const GoldQuantityInputAction = new ActionRowBuilder().addComponents(GoldQuantityInput);
 
         // if option is selected, add the text inputs to the modal
         var options = [];
-        if (selectedOption.includes('wts-wood')) { options.push(WoodPriceInputAction); options.push(WoodQuantityInputAction); }
-        if (selectedOption.includes('wts-stone')) { options.push(StonePriceInputAction); options.push(StoneQuantityInputAction); }
-        if (selectedOption.includes('wts-iron')) { options.push(IronPriceInputAction); options.push(IronQuantityInputAction); }
-        if (selectedOption.includes('wts-gold')) { options.push(GoldPriceInputAction); options.push(GoldQuantityInputAction); }
+        if (selectedOption.includes('wts-wood')) { options.push(WoodPriceInputAction); /*options.push(WoodQuantityInputAction);*/ }
+        if (selectedOption.includes('wts-stone')) { options.push(StonePriceInputAction); /*options.push(StoneQuantityInputAction);*/ }
+        if (selectedOption.includes('wts-iron')) { options.push(IronPriceInputAction); /*options.push(IronQuantityInputAction);*/ }
+        if (selectedOption.includes('wts-gold')) { options.push(GoldPriceInputAction); /*options.push(GoldQuantityInputAction);*/ }
 
         modal.addComponents(options);
 
@@ -132,6 +132,9 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.on('interactionCreate', interaction => {
+
+    // #### NOT WORKING ####
+
 	if (interaction.type !== InteractionType.ModalSubmit) return;
 
     const wts_wood_price = interaction.fields.getTextInputValue('wts-wood-input'); 
